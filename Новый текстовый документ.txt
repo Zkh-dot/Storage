@@ -1,13 +1,7 @@
-SELECT [2_дюрю_онпртекъ], [42_жтр_ID], calc_id
-FROM (
-    SELECT 
-        [2_дюрю_онпртекъ],
-        [42_жтр_ID],
-        calc_id,
-        ROW_NUMBER() OVER (PARTITION BY [42_жтр_ID] ORDER BY [2_дюрю_онпртекъ] DESC, calc_id DESC) AS row_num
-    FROM [RESERVES].[RZRV].[RESERVE_CALCULATE_TEST]
-    WHERE 1=1
-        AND рХО_ОНПРТЕКЪ = 'а'
-        AND [15_дюрю_нйнмвюмхъ_днцнбнпю] > @reporting_date
-) AS RankedDeals
-WHERE row_num = 1;
+
+UPDATE #reserve_tmp
+SET date_pd_final = 2_дюрю_онпртекъ, 
+date_pd1y = 2_дюрю_онпртекъ, 
+date_pd_port = 2_дюрю_онпртекъ,
+date_ccf = 2_дюрю_онпртекъ,
+date_lgd = 2_дюрю_онпртекъ;
