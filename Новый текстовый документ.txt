@@ -1,0 +1,14 @@
+WITH RankedDeals AS (
+    SELECT 
+        [2_дюрю_онпртекъ],
+        [42_жтр_ID],
+        calc_id,
+        ROW_NUMBER() OVER (PARTITION BY [42_жтр_ID] ORDER BY [2_дюрю_онпртекъ] DESC, calc_id DESC) AS row_num
+    FROM [RESERVES].[RZRV].[RESERVE_CALCULATE_TEST]
+	WHERE 1=1
+		and рХО_ОНПРТЕКЪ = 'а'
+		and [15_дюрю_нйнмвюмхъ_днцнбнпю] > @reporting_date
+)
+SELECT [2_дюрю_онпртекъ], [42_жтр_ID], calc_id
+FROM RankedDeals
+WHERE row_num = 1
