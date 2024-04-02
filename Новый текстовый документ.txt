@@ -1,7 +1,0 @@
-
-UPDATE #reserve_tmp
-SET date_pd_final = 2_дюрю_онпртекъ, 
-date_pd1y = 2_дюрю_онпртекъ, 
-date_pd_port = 2_дюрю_онпртекъ,
-date_ccf = 2_дюрю_онпртекъ,
-date_lgd = 2_дюрю_онпртекъ;
